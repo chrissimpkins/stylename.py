@@ -27,7 +27,7 @@ This script updates existing OpenType name table records nameID 2 and 17 with co
 - `--id17` : defines all nameID 17 records in font
 - `--all` : defines all nameID 2 and nameID 17 records in font (mutually exclusive with `--id2` and `--id17`)
 
-**Note**: this re-writes the name tables in the fonts passed as arguments on the command line (i.e. writes files in place) so make copies first if you intend to maintain the fonts with the former name table definitions for any reason (though you can simply re-write with the previous name if you forget...).
+**Note**: this re-writes the name tables in the font passed as an argument on the command line (i.e. writes file in place) so make a copy before you use this tool if you intend to maintain the fonts with the former name table definitions for any reason (though you can simply re-write with the previous name if you forget...).
 
 **Note**: This script to does not write new OpenType name ID 2 or 17 records in the font if they do not previously exist.
 
