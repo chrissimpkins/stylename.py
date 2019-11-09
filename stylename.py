@@ -45,6 +45,12 @@ def main():
     args = parser.parse_args(sys.argv[1:])
 
     # Command line argument tests
+    #  confirm that at least one option is defined
+    if not args.all and not args.id2 and not args.id17:
+        sys.stderr.write(
+            f"[ERROR] At least one of the following options must be defined: --all, --id2, --id17{os.linesep}"
+        )
+        sys.exit(1)
     #  confirm that --all flag and id2/id17 flags are not used simultaneously
     if args.all and (args.id2 or args.id17):
         sys.stderr.write(
