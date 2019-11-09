@@ -81,20 +81,24 @@ def main():
         name_id_17 = None
 
     # edit name ID 2 and 17 records
+    name_id2_updated = False
+    name_id17_updated = False
     for record in namerecord_list:
         if record.nameID == 2:
             if name_id_2:
                 record.string = name_id_2
+                name_id2_updated = True
         if record.nameID == 17:
             if name_id_17:
                 record.string = name_id_17
+                name_id17_updated = True
 
     # write changes to the font file
     try:
         tt.save(args.FONT)
-        if name_id_2:
+        if name_id2_updated:
             print(f"[OK] Updated '{args.FONT}' nameID 2 to '{name_id_2}'.")
-        if name_id_17:
+        if name_id17_updated:
             print(f"[OK] Updated '{args.FONT}' nameID 17 to '{name_id_17}'.")
     except Exception as e:
         sys.stderr.write(
